@@ -1,0 +1,13 @@
+--- libgconf-java-2.5.5/aclocal.m4.orig	Tue Feb 17 02:38:59 2004
++++ libgconf-java-2.5.5/aclocal.m4	Wed Feb 18 10:28:19 2004
+@@ -688,7 +688,9 @@
+         GCJ_HOME=`which gcj | sed 's/\(.*\).bin.*gcj/\1/'`
+      fi
+ 
+-     GCJ_JAR=`locate libgcj | grep libgcj.*\.jar`
++     if test x$GCJ_JAR = x ; then
++        GCJ_JAR=`locate libgcj | grep libgcj.*\.jar`
++     fi
+      if test x$GCJ_JAR != x ; then
+         GCJ_CLASSPATH="${GCJ_JAR}:${CLASSPATH}"
+      else
