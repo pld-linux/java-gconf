@@ -1,23 +1,22 @@
 %define	pname	libgconf-java
-%define	gtkapi	2.3
+%define	gtkapi	2.4
 Summary:	Java interface for GConf
 Summary(pl):	Wrapper Java dla GConf
 Name:		java-gconf
-Version:	2.5.5
+Version:	2.5.6
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{pname}/2.5/%{pname}-%{version}.tar.bz2
-# Source0-md5:	ce4b9deb42053165d115cab33e625368
+# Source0-md5:	07fe1b261d0da375b05ca55b2866b0b2
 Patch0:		%{name}-configure.patch
 Patch1:		%{name}-gconf_cflags.patch
-Patch2:		%{name}-gcjjar.patch
 URL:		http://java-gnome.sourceforge.net/
-BuildRequires:	GConf2-devel >= 2.5.1
+BuildRequires:	GConf2-devel >= 2.5.90
 BuildRequires:	autoconf
 BuildRequires:	gcc-java >= 3.3.2
-BuildRequires:	gtk+2-devel >= 2.3.2
-BuildRequires:	java-gtk-devel >= 2.3.5
+BuildRequires:	gtk+2-devel >= 2.3.5
+BuildRequires:	java-gtk-devel >= 2.3.6
 BuildRequires:	libgcj-devel >= 3.3.2
 Obsoletes:	libgconf-java
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -45,7 +44,6 @@ Pliki nag³ówkowe biblioteki java-gconf.
 %setup -q -n %{pname}-%{version}
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 gtkapiversion="%{gtkapi}"; export gtkapiversion
@@ -70,7 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README THANKS TODO*
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/lib*.so.*
 
 %files devel
 %defattr(644,root,root,755)
