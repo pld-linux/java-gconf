@@ -1,14 +1,3 @@
-diff -urN aa/libgconf-java-2.5.4/configure.in libgconf-java-2.5.4/configure.in
---- aa/libgconf-java-2.5.4/configure.in	2004-02-04 01:55:18.000000000 +0100
-+++ libgconf-java-2.5.4/configure.in	2004-02-08 22:52:07.207909928 +0100
-@@ -156,6 +156,6 @@
- dnl Check for libgtkhtml >= 2.0
- PKG_CHECK_MODULES(GCONF, gconf-2.0 >= 2.4)
- AC_SUBST(GCONF_CFLAGS)
--AC_SUBST(GCONFL_LIBS)
-+AC_SUBST(GCONF_LIBS)
- 
- AC_OUTPUT( Makefile src/Makefile )
 diff -urN aa/libgconf-java-2.5.4/src/Makefile.in libgconf-java-2.5.4/src/Makefile.in
 --- aa/libgconf-java-2.5.4/src/Makefile.in	2004-02-04 01:55:18.000000000 +0100
 +++ libgconf-java-2.5.4/src/Makefile.in	2004-02-08 22:51:53.112052824 +0100
@@ -25,8 +14,8 @@ diff -urN aa/libgconf-java-2.5.4/src/Makefile.in libgconf-java-2.5.4/src/Makefil
  .SUFFIXES: .java .class
  
  .c.o:
--	$(CC) -c $(CFLAGS) $< -o $@ $(JAVA_INCLUDES) $(GTK_CFLAGS) \
-+	$(CC) -c $(CFLAGS) $< -o $@ $(JAVA_INCLUDES) $(GTK_CFLAGS) $(GCONF_CFLAGS) \
- 	    $(LIBGTKHTML_CFLAGS) $(GNOME_CFLAGS) $(LIBGLADE_CFLAGS)
- 		#-D@MACRO_FLAG@
- 
+-	$(CC) -c $(CFLAGS) $< $(JAVA_INCLUDES) $(GTK_CFLAGS) \
++	$(CC) -c $(CFLAGS) $< $(JAVA_INCLUDES) $(GTK_CFLAGS) $(GCONF_CFLAGS) \
+ 	    $(LIBGTKHTML_CFLAGS) $(GNOME_CFLAGS) $(LIBGLADE_CFLAGS) \
+ 		\
+ 		-o $@
