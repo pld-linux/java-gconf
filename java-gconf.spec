@@ -1,4 +1,4 @@
-%define	pname	libgconf-java
+%define		pname	libgconf-java
 Summary:	Java interface for GConf
 Summary(pl):	Wrapper Java dla GConf
 Name:		java-gconf
