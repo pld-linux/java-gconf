@@ -1,0 +1,12 @@
+diff -urN aa/libgconf-java-2.7.4/Makefile.in libgconf-java-2.7.4/Makefile.in
+--- aa/libgconf-java-2.7.4/Makefile.in	2004-07-20 15:10:21.000000000 +0200
++++ libgconf-java-2.7.4/Makefile.in	2004-07-21 16:01:41.223281792 +0200
+@@ -61,7 +61,7 @@
+ 	$(INSTALL) -m644 lib/gconf$(gconfapiversion)-$(gconfversion).jar $(DESTDIR)$(datadir)/java
+ 	ln -s -f gconf$(gconfapiversion)-$(gconfversion).jar $(DESTDIR)$(datadir)/java/gconf$(gconfapiversion).jar
+ 	-for f in $(DOCUMENTS); do $(INSTALL) -m644 $(JG_DOC_DIR)/$$f $(DESTDIR)$(datadir)/doc/java-gnome-$(gconfapiversion) || exit 1; done
+-	$(INSTALL) -m644 gconf-java.pc $(libdir)/pkgconfig/
++	$(INSTALL) -m644 gconf-java.pc $(DESTDIR)$(libdir)/pkgconfig/
+ 
+ native_install:
+ 	$(INSTALL) -s -m644 lib/libgconfjar$(gconfapiversion).so.$(gconfversion) $(DESTDIR)$(libdir)/
