@@ -3,20 +3,20 @@
 Summary:	Java interface for GConf
 Summary(pl):	Wrapper Java dla GConf
 Name:		java-gconf
-Version:	2.6.0
+Version:	2.7.2
 Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{pname}/2.6/%{pname}-%{version}.tar.bz2
-# Source0-md5:	7ff555e10e1a034f664f9d608da26036
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{pname}/2.7/%{pname}-%{version}.tar.bz2
+# Source0-md5:	5f6fb3d34830713e92b824eaaa077a76
 Patch0:		%{name}-configure.patch
 Patch1:		%{name}-gconf_cflags.patch
 URL:		http://java-gnome.sourceforge.net/
-BuildRequires:	GConf2-devel >= 2.6.1
+BuildRequires:	GConf2-devel >= 2.7.1
 BuildRequires:	autoconf
 BuildRequires:	gcc-java >= 3.3.2
-BuildRequires:	gtk+2-devel >= 2:2.4.0
-BuildRequires:	java-gtk-devel >= 2.4.0
+BuildRequires:	gtk+2-devel >= 2:2.4.3
+BuildRequires:	java-gtk-devel >= 2.4.2
 BuildRequires:	libgcj-devel >= 3.3.2
 Obsoletes:	libgconf-java
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
