@@ -1,23 +1,24 @@
 %define	pname	libgconf-java
-%define	gtkapi	2.4
 Summary:	Java interface for GConf
 Summary(pl):	Wrapper Java dla GConf
 Name:		java-gconf
-Version:	2.6.0
+Version:	2.8.0
 Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{pname}/2.6/%{pname}-%{version}.tar.bz2
-# Source0-md5:	7ff555e10e1a034f664f9d608da26036
-Patch0:		%{name}-configure.patch
-Patch1:		%{name}-gconf_cflags.patch
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{pname}/2.8/%{pname}-%{version}.tar.bz2
+# Source0-md5:	58c2af2d9a819eb8d2d8f22330ce45ce
+Patch0:		%{name}-DESTDIR.patch
+Patch1:		%{name}-CLASSPATH.patch
 URL:		http://java-gnome.sourceforge.net/
-BuildRequires:	GConf2-devel >= 2.6.1
+BuildRequires:	GConf2-devel >= 2.8.0.1
 BuildRequires:	autoconf
-BuildRequires:	gcc-java >= 3.3.2
-BuildRequires:	gtk+2-devel >= 2:2.4.0
-BuildRequires:	java-gtk-devel >= 2.4.0
-BuildRequires:	libgcj-devel >= 3.3.2
+BuildRequires:	automake
+BuildRequires:	gcc-java >= 5:3.3.2
+BuildRequires:	gtk+2-devel >= 2:2.4.4
+BuildRequires:	java-gtk-devel >= 2.4.5
+BuildRequires:	libgcj-devel >= 5:3.3.2
+BuildRequires:	pkgconfig
 Obsoletes:	libgconf-java
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -46,7 +47,7 @@ Pliki nag³ówkowe biblioteki java-gconf.
 %patch1 -p1
 
 %build
-gtkapiversion="%{gtkapi}"; export gtkapiversion
+%{__aclocal} -I `pkg-config --variable macro_dir gtk2-java`
 %{__autoconf}
 %configure \
 	GCJ_JAR=`echo /usr/share/java/libgcj*.jar`
@@ -55,7 +56,7 @@ gtkapiversion="%{gtkapi}"; export gtkapiversion
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_datadir}/java-gnome,%{_libdir}}
+install -d $RPM_BUILD_ROOT{%{_javadir},%{_libdir},%{_pkgconfigdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -68,10 +69,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS NEWS README THANKS TODO*
+%doc NEWS
 %attr(755,root,root) %{_libdir}/lib*.so.*
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
-%{_datadir}/java-gnome/*
+%{_javadir}/*
+%{_pkgconfigdir}/*.pc
