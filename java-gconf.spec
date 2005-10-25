@@ -2,23 +2,25 @@
 Summary:	Java interface for GConf
 Summary(pl):	Wrapper Java dla GConf
 Name:		java-gconf
-Version:	2.10.1
+Version:	2.12.0
 Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{pname}/2.10/%{pname}-%{version}.tar.bz2
-# Source0-md5:	73efb6effd65e1fe1b949adb8c70d5db
+Source0:	http://research.operationaldynamics.com/linux/java-gnome/dist/%{pname}-%{version}.tar.gz
+# Source0-md5:	01ccd398036fc57306f96f6719e7cfc6
 URL:		http://java-gnome.sourceforge.net/
-BuildRequires:	GConf2-devel >= 2.10.0
+BuildRequires:	GConf2-devel >= 2.12.0
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gcc-java >= 5:3.3.2
-BuildRequires:	gtk+2-devel >= 2:2.4.4
-BuildRequires:	java-gtk-devel >= 2.6.0
+BuildRequires:	java-gtk-devel >= 2.8.0
 BuildRequires:	libgcj-devel >= 5:3.3.2
+BuildRequires:	libtool
 BuildRequires:	pkgconfig
 Obsoletes:	libgconf-java
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		macros  %{_datadir}/glib-java/macros
 
 %description
 Java interface for GConf.
@@ -31,6 +33,7 @@ Summary:	Header files for java-gconf library
 Summary(pl):	Pliki nag³ówkowe biblioteki java-gconf
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	java-gtk-devel >= 2.8.0
 Obsoletes:	libgconf-java-devel
 
 %description devel
@@ -43,7 +46,8 @@ Pliki nag³ówkowe biblioteki java-gconf.
 %setup -q -n %{pname}-%{version}
 
 %build
-%{__aclocal} -I `pkg-config --variable macro_dir gtk2-java`
+%{__libtoolize}
+%{__aclocal} -I `pkg-config --variable macro_dir gtk2-java` -I %{macros}
 %{__automake}
 %{__autoconf}
 %configure \
@@ -75,7 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/lib*-2.10.so
+%attr(755,root,root) %{_libdir}/lib*-2.11.so
 
 %files devel
 %defattr(644,root,root,755)
