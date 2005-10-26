@@ -1,6 +1,6 @@
 %define		pname	libgconf-java
 Summary:	Java interface for GConf
-Summary(pl):	Wrapper Java dla GConf
+Summary(pl):	Wrapper Javy dla GConfa
 Name:		java-gconf
 Version:	2.12.0
 Release:	1
@@ -26,7 +26,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Java interface for GConf.
 
 %description -l pl
-Wrapper Java dla GConf.
+Wrapper Javy dla GConfa.
 
 %package devel
 Summary:	Header files for java-gconf library
