@@ -2,18 +2,18 @@
 Summary:	Java interface for GConf
 Summary(pl):	Wrapper Javy dla GConfa
 Name:		java-gconf
-Version:	2.12.0
+Version:	2.12.1
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://research.operationaldynamics.com/linux/java-gnome/dist/%{pname}-%{version}.tar.gz
-# Source0-md5:	01ccd398036fc57306f96f6719e7cfc6
+# Source0-md5:	0b696a7228f78f63fd897e64d1278955
 URL:		http://java-gnome.sourceforge.net/
 BuildRequires:	GConf2-devel >= 2.12.0
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gcc-java >= 5:3.3.2
-BuildRequires:	java-gtk-devel >= 2.8.0
+BuildRequires:	java-gtk-devel >= 2.8.1
 BuildRequires:	libgcj-devel >= 5:3.3.2
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
@@ -33,7 +33,7 @@ Summary:	Header files for java-gconf library
 Summary(pl):	Pliki nag³ówkowe biblioteki java-gconf
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	java-gtk-devel >= 2.8.0
+Requires:	java-gtk-devel >= 2.8.1
 Obsoletes:	libgconf-java-devel
 
 %description devel
@@ -79,7 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/lib*-2.11.so
+%attr(755,root,root) %{_libdir}/lib*-2.12.so
 
 %files devel
 %defattr(644,root,root,755)
