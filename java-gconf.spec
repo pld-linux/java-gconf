@@ -63,7 +63,7 @@ install -d $RPM_BUILD_ROOT{%{_javadir},%{_libdir},%{_pkgconfigdir}} \
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-	
+
 mv -f $RPM_BUILD_ROOT%{_docdir}/%{pname}-%{version}/examples \
         $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
