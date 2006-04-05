@@ -2,12 +2,12 @@
 Summary:	Java interface for GConf
 Summary(pl):	Wrapper Javy dla GConfa
 Name:		java-gconf
-Version:	2.12.1
-Release:	1
+Version:	2.12.2
+Release:	2
 License:	LGPL
 Group:		Libraries
 Source0:	http://research.operationaldynamics.com/linux/java-gnome/dist/%{pname}-%{version}.tar.gz
-# Source0-md5:	0b696a7228f78f63fd897e64d1278955
+# Source0-md5:	9e67540ab5ef8cf7849e771de73cf5bb
 URL:		http://java-gnome.sourceforge.net/
 BuildRequires:	GConf2-devel >= 2.12.0
 BuildRequires:	autoconf
