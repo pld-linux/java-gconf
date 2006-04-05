@@ -3,11 +3,12 @@ Summary:	Java interface for GConf
 Summary(pl):	Wrapper Javy dla GConfa
 Name:		java-gconf
 Version:	2.12.2
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Libraries
-Source0:	http://research.operationaldynamics.com/linux/java-gnome/dist/%{pname}-%{version}.tar.gz
-# Source0-md5:	9e67540ab5ef8cf7849e771de73cf5bb
+#Source0:	http://research.operationaldynamics.com/linux/java-gnome/dist/%{pname}-%{version}.tar.gz
+Source0:	http://download.gnome.org/sources/libgconf-java/2.12/%{pname}-%{version}.tar.bz2
+# Source0-md5:	c1ceb7d6f16edb34b01fd288264fcacd
 URL:		http://java-gnome.sourceforge.net/
 BuildRequires:	GConf2-devel >= 2.12.0
 BuildRequires:	autoconf
@@ -51,7 +52,8 @@ Pliki nag³ówkowe biblioteki java-gconf.
 %{__automake}
 %{__autoconf}
 %configure \
-	GCJ_JAR=`echo %{_datadir}/java/libgcj*.jar` \
+	GCJFLAGS="%{rpmcflags}" \
+        JAR=%{_bindir}/fastjar \
 	--without-javadocs
 
 %{__make}
