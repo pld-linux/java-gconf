@@ -2,19 +2,18 @@
 Summary:	Java interface for GConf
 Summary(pl):	Wrapper Javy dla GConfa
 Name:		java-gconf
-Version:	2.12.2
-Release:	3
+Version:	2.12.4
+Release:	1
 License:	LGPL
 Group:		Libraries
-#Source0:	http://research.operationaldynamics.com/linux/java-gnome/dist/%{pname}-%{version}.tar.gz
-Source0:	http://download.gnome.org/sources/libgconf-java/2.12/%{pname}-%{version}.tar.bz2
-# Source0-md5:	c1ceb7d6f16edb34b01fd288264fcacd
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgconf-java/2.12/%{pname}-%{version}.tar.bz2
+# Source0-md5:	ac9f8e35999cedcb2e9009032f0fe256
 URL:		http://java-gnome.sourceforge.net/
-BuildRequires:	GConf2-devel >= 2.12.0
+BuildRequires:	GConf2-devel >= 2.14.0
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gcc-java >= 5:3.3.2
-BuildRequires:	java-gtk-devel >= 2.8.1
+BuildRequires:	java-gtk-devel >= 2.9.1
 BuildRequires:	libgcj-devel >= 5:3.3.2
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
@@ -34,7 +33,7 @@ Summary:	Header files for java-gconf library
 Summary(pl):	Pliki nag³ówkowe biblioteki java-gconf
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	java-gtk-devel >= 2.8.1
+Requires:	java-gtk-devel >= 2.9.1
 Obsoletes:	libgconf-java-devel
 
 %description devel
