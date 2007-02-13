@@ -1,6 +1,6 @@
 %define		pname	libgconf-java
 Summary:	Java interface for GConf
-Summary(pl.UTF-8):   Wrapper Javy dla GConfa
+Summary(pl.UTF-8):	Wrapper Javy dla GConfa
 Name:		java-gconf
 Version:	2.12.6
 Release:	1
@@ -30,7 +30,7 @@ Wrapper Javy dla GConfa.
 
 %package devel
 Summary:	Header files for java-gconf library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki java-gconf
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki java-gconf
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	java-gtk-devel >= 2.10.2
