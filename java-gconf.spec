@@ -5,7 +5,7 @@ Name:		java-gconf
 Version:	2.12.6
 Release:	3
 License:	LGPL
-Group:		Libraries
+Group:		Libraries/Java
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgconf-java/2.12/%{pname}-%{version}.tar.bz2
 # Source0-md5:	9e7081679c31abf946c2071fe8ca1895
 URL:		http://java-gnome.sourceforge.net/
